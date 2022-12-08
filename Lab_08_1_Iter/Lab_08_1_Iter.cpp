@@ -14,7 +14,7 @@ char* Change(char* str)
 	size_t i = 0;
 	while (i < len && str[i + 2] != 0)
 	{
-		if ((str[i] && str[i + 2] == 'O' || str[i] && str[i + 2] == 'A') && str[i + 1] == 'G')
+		if (((str[i] == 'O' && str[i + 2] == 'O') || (str[i] == 'A' && str[i + 2] == 'A')) && str[i + 1] == 'G')
 		{
 			strcat(t, "**");
 			t += 2;
