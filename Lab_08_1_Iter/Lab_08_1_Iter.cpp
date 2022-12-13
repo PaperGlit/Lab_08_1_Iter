@@ -1,5 +1,4 @@
-﻿#define _CRT_SECURE_NO_WARNINGS
-#include <iostream>
+﻿#include <iostream>
 
 using namespace std;
 
@@ -16,7 +15,7 @@ char* Change(char* str)
 	{
 		if (((str[i] == 'O' && str[i + 2] == 'O') || (str[i] == 'A' && str[i + 2] == 'A')) && str[i + 1] == 'G')
 		{
-			strcat(t, "**");
+			strcat_s(t, len, "**");
 			t += 2;
 			i += 3;
 		}
@@ -29,7 +28,7 @@ char* Change(char* str)
 	*t++ = str[i++];
 	*t++ = str[i++];
 	*t = '\0';
-	strcpy(str, tmp);
+	strcpy_s(str, len, tmp);
 	return tmp;
 }
 
