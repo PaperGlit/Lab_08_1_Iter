@@ -7,8 +7,6 @@ using namespace Microsoft::VisualStudio::CppUnitTestFramework;
 char* TestChange(char* str)
 {
 	size_t len = strlen(str);
-	if (len < 3)
-		return str;
 	char* tmp = new char[len * 4 / 3 + 1];
 	char* t = tmp;
 	tmp[0] = '\0';
@@ -30,7 +28,7 @@ char* TestChange(char* str)
 	*t++ = str[i++];
 	*t++ = str[i++];
 	*t = '\0';
-	strcpy_s(str, len, tmp);
+	strcpy_s(str, len + 1, tmp);
 	return tmp;
 }
 

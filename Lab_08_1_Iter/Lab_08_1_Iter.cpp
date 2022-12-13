@@ -5,11 +5,6 @@ using namespace std;
 char* Change(char* str)
 {
 	size_t len = strlen(str);
-	if (len < 3)
-	{
-		cout << "No" << endl;
-		return str;
-	}
 	int k = 0;
 	char* tmp = new char[len * 4 / 3 + 1];
 	char* t = tmp;
