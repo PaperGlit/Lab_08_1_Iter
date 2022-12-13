@@ -6,7 +6,11 @@ char* Change(char* str)
 {
 	size_t len = strlen(str);
 	if (len < 3)
+	{
+		cout << "No" << endl;
 		return str;
+	}
+	int k = 0;
 	char* tmp = new char[len * 4 / 3 + 1];
 	char* t = tmp;
 	tmp[0] = '\0';
@@ -18,6 +22,7 @@ char* Change(char* str)
 			strcat_s(t, len, "**");
 			t += 2;
 			i += 3;
+			k++;
 		}
 		else
 		{
@@ -28,7 +33,11 @@ char* Change(char* str)
 	*t++ = str[i++];
 	*t++ = str[i++];
 	*t = '\0';
-	strcpy_s(str, len, tmp);
+	strcpy_s(str, len + 1, tmp);
+	if (k > 0)
+		cout << "Yes, Count : " << k << endl;
+	else
+		cout << "No" << endl;
 	return tmp;
 }
 
